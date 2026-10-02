@@ -1,0 +1,25 @@
+[package]
+name = "kagemusha"
+description = "In-VM agent for AWS Lambda MicroVMs: lifecycle hook relay, per-VM identity, synchronous telemetry flush, usage metering"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords = ["aws", "lambda", "microvm", "init", "opentelemetry"]
+categories = ["command-line-utilities", "os::linux-apis", "virtualization"]
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+hyper.workspace = true
+hyper-util.workspace = true
+http-body-util.workspace = true
+reqwest.workspace = true
+anyhow.workspace = true
+libc.workspace = true
+bytes.workspace = true

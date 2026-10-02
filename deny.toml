@@ -1,0 +1,21 @@
+# cargo-deny configuration.
+#
+# CI runs only `cargo deny check advisories` (.github/workflows/audit.yml,
+# cargo-deny pinned in mise.toml), so only the [advisories] section below
+# is in effect. The bans, licenses and sources checks are not run.
+# Reference: https://embarkstudios.github.io/cargo-deny/checks/advisories/cfg.html
+
+[advisories]
+# The RustSec advisory database (cargo-deny's default, written out so the
+# source is explicit). Vulnerability advisories always fail the check.
+db-urls = ["https://github.com/RustSec/advisory-db"]
+# A crate version yanked from its registry fails the check (default: warn).
+yanked = "deny"
+# Unmaintained advisories fail for every crate in the graph (the default).
+unmaintained = "all"
+# Unsound advisories fail for every crate in the graph, not only for
+# direct dependencies (default: workspace).
+unsound = "all"
+# No advisory is ignored. To ignore one, add
+# { id = "RUSTSEC-YYYY-NNNN", reason = "why it does not apply" }.
+ignore = []

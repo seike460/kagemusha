@@ -1,0 +1,12 @@
+# Build context hygiene for `docker build -f examples/Dockerfile .`
+# The build stage does `COPY . .` — keep it lean and never ship VCS
+# internals, build artifacts, or editor/backup leftovers.
+/target
+/.git
+**/*.rs.bk
+**/*.bak
+**/*.backup
+**/*.orig
+**/*~
+**/*.swp
+.DS_Store
